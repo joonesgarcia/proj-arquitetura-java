@@ -1,0 +1,4 @@
+P;1;Carolina Herrera 212 VIP Rose;200;true;150;Perfume;
+P;2;Lady Million Feminino;500;true;200;EauDeParfum;
+P;3;Carolina Herrera CH;300;false;120;AguaDeColonia;
+P;4;Dolce e Gabbana Light Blue;700;true;100;EauDeToilette;
