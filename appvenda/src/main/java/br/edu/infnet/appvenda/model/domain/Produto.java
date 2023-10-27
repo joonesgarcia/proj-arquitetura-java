@@ -1,17 +1,36 @@
 package br.edu.infnet.appvenda.model.domain;
 
+import javax.persistence.Entity;
+import javax.persistence.GeneratedValue;
+import javax.persistence.GenerationType;
+import javax.persistence.Id;
+import javax.persistence.Inheritance;
+import javax.persistence.InheritanceType;
+import javax.persistence.JoinColumn;
+import javax.persistence.ManyToOne;
+import javax.persistence.Table;
+
+@Entity
+@Table(name="TProduto")
+@Inheritance(strategy = InheritanceType.JOINED)
 public class Produto {
 
-	private int codigo;
+	@Id
+	@GeneratedValue(strategy=GenerationType.IDENTITY)
+	private Integer id;
+	private Integer codigo;
 	private String descricao;
-	private float preco;
-	private boolean estoque;
+	private Float preco;
+	private Boolean estoque;
 	
+	@ManyToOne
+	@JoinColumn(name="idVendedor")
 	private Vendedor vendedor;
 	
 	@Override
 	public String toString() {
-		return String.format("%d - %s - %.2f - %s", codigo, descricao, preco, estoque);
+		return String.format("%d - %s - %d - %.2f - %s", 
+				codigo, descricao, id, preco, estoque);
 	}
 	
 	public Produto() {
@@ -55,5 +74,13 @@ public class Produto {
 	}
 	public void setEstoque(boolean estoque) {
 		this.estoque = estoque;
+	}
+
+	public Integer getId() {
+		return id;
+	}
+
+	public void setId(Integer id) {
+		this.id = id;
 	}	
 }

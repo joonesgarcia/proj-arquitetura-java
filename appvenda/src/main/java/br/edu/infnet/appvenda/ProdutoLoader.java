@@ -12,9 +12,10 @@ import org.springframework.stereotype.Component;
 import br.edu.infnet.appvenda.model.domain.Perfume;
 import br.edu.infnet.appvenda.model.domain.Perfume.PType;
 import br.edu.infnet.appvenda.model.domain.Roupa;
+import br.edu.infnet.appvenda.model.domain.Vendedor;
 import br.edu.infnet.appvenda.model.service.ProdutoService;
 
-@Order(1)
+@Order(4)
 @Component
 public class ProdutoLoader implements ApplicationRunner{
 
@@ -27,10 +28,12 @@ public class ProdutoLoader implements ApplicationRunner{
 		
 		String line = buffer.readLine();
 		System.out.println("Processamento de Produtos iniciado");
+		
+		Vendedor vendedor = new Vendedor();
 
 		while(line != null) {
 			String[] data = line.split(";");
-			
+
 			switch(data[0]) {
 			case "R":
 				Roupa roupa = new Roupa();
@@ -43,6 +46,9 @@ public class ProdutoLoader implements ApplicationRunner{
 				roupa.setTamanho(data[6]);
 				roupa.setPossuiEstampa(Boolean.getBoolean(data[7]));
 				
+				vendedor.setId(Integer.parseInt(data[8]));				
+				roupa.setVendedor(vendedor);
+				
 				produtoService.incluirProduto(roupa);
 				break;
 			case "P":
@@ -54,6 +60,9 @@ public class ProdutoLoader implements ApplicationRunner{
 
 				perfume.setMililitros(Integer.parseInt(data[5]));
 				perfume.setTipo(PType.valueOf(data[6]));
+				
+				vendedor.setId(Integer.parseInt(data[7]));			
+				perfume.setVendedor(vendedor);
 				
 				produtoService.incluirProduto(perfume);
 				break;

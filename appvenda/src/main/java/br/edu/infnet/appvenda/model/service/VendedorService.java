@@ -4,18 +4,21 @@ import java.util.Collection;
 import java.util.HashMap;
 import java.util.Map;
 
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import br.edu.infnet.appvenda.model.domain.Vendedor;
+import br.edu.infnet.appvenda.repository.VendedorRepository;
 
 @Service
 public class VendedorService {
-	private Map<String, Vendedor> mapaVendedor = new HashMap<String, Vendedor>();
+	@Autowired
+	private VendedorRepository vendedorRepository;
 	
 	public void incluirVendedor(Vendedor vendedor) {
-		mapaVendedor.put(vendedor.getCpf(), vendedor);
+		vendedorRepository.save(vendedor);
 	}
 	public Collection<Vendedor> obterVendedores(){
-		return mapaVendedor.values();
+		return (Collection<Vendedor>) vendedorRepository.findAll();
 	}
 }

@@ -9,6 +9,7 @@ import org.springframework.boot.ApplicationRunner;
 import org.springframework.core.annotation.Order;
 import org.springframework.stereotype.Component;
 import br.edu.infnet.appvenda.model.domain.Roupa;
+import br.edu.infnet.appvenda.model.domain.Vendedor;
 import br.edu.infnet.appvenda.model.service.RoupaService;
 
 @Order(2)
@@ -38,6 +39,11 @@ public class RoupaLoader implements ApplicationRunner{
 			roupa.setTecido(data[5]);
 			roupa.setTamanho(data[6]);
 			roupa.setPossuiEstampa(Boolean.getBoolean(data[7]));
+			
+			Vendedor vendedor = new Vendedor();
+			vendedor.setId(Integer.parseInt(data[8]));
+			
+			roupa.setVendedor(vendedor);
 			
 			roupaService.incluirRoupa(roupa);
 			line = buffer.readLine();

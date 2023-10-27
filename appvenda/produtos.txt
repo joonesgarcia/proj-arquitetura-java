@@ -1,8 +1,8 @@
-P;1;Carolina Herrera 212 VIP Rose;200;true;150;Perfume;
-P;2;Lady Million Feminino;500;true;200;EauDeParfum;
-P;3;Carolina Herrera CH;300;false;120;AguaDeColonia;
-P;4;Dolce e Gabbana Light Blue;700;true;100;EauDeToilette;
-R;5;Camiseta Branca;30;true;algodao;M;true;
-R;6;Calca Jeans;80;false;jeans;38;true;
-R;7;Vestido Preto;180;true;malha fina;P;true;
-R;8;Blazer;300;false;diverso;P;false;
+P;1;Carolina Herrera 212 VIP Rose;200;true;150;Perfume;1
+P;2;Lady Million Feminino;500;true;200;EauDeParfum;1
+P;3;Carolina Herrera CH;300;false;120;AguaDeColonia;1
+P;4;Dolce e Gabbana Light Blue;700;true;100;EauDeToilette;2
+R;5;Camiseta Branca;30;true;algodao;M;true;2
+R;6;Calca Jeans;80;false;jeans;38;true;2
+R;7;Vestido Preto;180;true;malha fina;P;true;2
+R;8;Blazer;300;false;diverso;P;false;3

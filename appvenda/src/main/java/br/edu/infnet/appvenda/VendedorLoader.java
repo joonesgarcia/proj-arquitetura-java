@@ -12,7 +12,7 @@ import org.springframework.stereotype.Component;
 import br.edu.infnet.appvenda.model.domain.Vendedor;
 import br.edu.infnet.appvenda.model.service.VendedorService;
 
-@Order(4)
+@Order(1)
 @Component
 public class VendedorLoader implements ApplicationRunner{
 

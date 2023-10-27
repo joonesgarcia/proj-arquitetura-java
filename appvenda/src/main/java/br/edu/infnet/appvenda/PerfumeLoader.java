@@ -11,6 +11,7 @@ import org.springframework.stereotype.Component;
 
 import br.edu.infnet.appvenda.model.domain.Perfume;
 import br.edu.infnet.appvenda.model.domain.Perfume.PType;
+import br.edu.infnet.appvenda.model.domain.Vendedor;
 import br.edu.infnet.appvenda.model.service.PerfumeService;
 
 @Order(3)
@@ -39,6 +40,11 @@ public class PerfumeLoader implements ApplicationRunner{
 			
 			perfume.setMililitros(Integer.parseInt(data[5]));
 			perfume.setTipo(PType.valueOf(data[6]));
+			
+			Vendedor vendedor = new Vendedor();
+			vendedor.setId(Integer.parseInt(data[7]));
+			
+			perfume.setVendedor(vendedor);
 			
 			perfumeService.incluirPerfume(perfume);
 			line = buffer.readLine();

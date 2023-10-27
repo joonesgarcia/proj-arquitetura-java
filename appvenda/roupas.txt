@@ -1,4 +1,4 @@
-R;1;Camiseta Branca;30;true;algodao;M;true;
-R;2;Calca Jeans;80;false;jeans;38;true;
-R;3;Vestido Preto;180;true;malha fina;P;true;
-R;4;Blazer;300;false;diverso;P;false;
+R;1;Camiseta Branca;30;true;algodao;M;true;2
+R;2;Calca Jeans;80;false;jeans;38;true;2
+R;3;Vestido Preto;180;true;malha fina;P;true;2
+R;4;Blazer;300;false;diverso;P;false;4

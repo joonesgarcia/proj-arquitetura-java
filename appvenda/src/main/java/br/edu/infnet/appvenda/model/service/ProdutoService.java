@@ -1,22 +1,23 @@
 package br.edu.infnet.appvenda.model.service;
 
 import java.util.Collection;
-import java.util.HashMap;
-import java.util.Map;
 
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import br.edu.infnet.appvenda.model.domain.Produto;
+import br.edu.infnet.appvenda.repository.ProdutoRepository;
 
 @Service
 public class ProdutoService {
-	private Map<Integer, Produto> mapaProduto = new HashMap<Integer, Produto>();
+	@Autowired
+	private ProdutoRepository produtoRepository;
 	
 	public void incluirProduto(Produto produto) {
-		mapaProduto.put(produto.getCodigo(), produto);
+		produtoRepository.save(produto);
 	}
 	public Collection<Produto> obterProdutos(){
-		return mapaProduto.values();
+		return (Collection<Produto>) produtoRepository.findAll();
 	}
 	public void printarProdutos() {
 		for(Produto produto : obterProdutos()) {
