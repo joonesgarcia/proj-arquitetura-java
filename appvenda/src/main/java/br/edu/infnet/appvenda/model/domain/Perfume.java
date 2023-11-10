@@ -2,10 +2,12 @@ package br.edu.infnet.appvenda.model.domain;
 
 import javax.persistence.Entity;
 import javax.persistence.Table;
+import javax.validation.constraints.Size;
 
 @Entity
 @Table(name="TPerfume")
 public class Perfume extends Produto {
+	@Size(min = 2, max = 400, message = "Um perfume deve ter um minimo de: {min} e um maximom de: {max} mls.")
 	private Integer mililitros;
 	private PType tipo;
 	
