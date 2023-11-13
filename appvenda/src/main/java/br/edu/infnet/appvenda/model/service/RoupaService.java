@@ -24,4 +24,7 @@ public class RoupaService {
 			System.out.println(roupa);
 		}
 	}
+	public long obterQtde() {
+		return roupaRepository.count();
+	}
 }

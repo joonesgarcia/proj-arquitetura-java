@@ -25,10 +25,10 @@ public class AppController {
 	@GetMapping(value = "/")
 	public String showHome(Model model) {
 		
-		model.addAttribute("qtdeVendedor", vendedorService.OBT);
-		model.addAttribute("qtdeProduto", produtoService.obterProdutos().size());
-		model.addAttribute("qtdePerfume", perfumeService.obterPerfumes().size());
-		model.addAttribute("qtdeRoupa", roupaService.obterRoupas().size());
+		model.addAttribute("qtdeVendedor", vendedorService.obterQtde());
+		model.addAttribute("qtdeProduto", produtoService.obterQtde());
+		model.addAttribute("qtdePerfume", perfumeService.obterQtde());
+		model.addAttribute("qtdeRoupa", roupaService.obterQtde());
 
 		return "home";
 	}

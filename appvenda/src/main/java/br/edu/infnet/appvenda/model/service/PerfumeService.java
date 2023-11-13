@@ -24,4 +24,7 @@ public class PerfumeService {
 			System.out.println(perfume);
 		}
 	}
+	public long obterQtde() {
+		return perfumeRepository.count();
+	}
 }

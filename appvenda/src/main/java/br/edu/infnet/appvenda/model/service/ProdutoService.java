@@ -24,4 +24,7 @@ public class ProdutoService {
 			System.out.println(produto);
 		}
 	}
+	public long obterQtde() {
+		return produtoRepository.count();
+	}
 }

@@ -1,4 +1,4 @@
-Carlos Damaceno Nunes;3874632874;carlos@gmail.com;
-Pedro Antonio Batista;7936432800;pedro@gmail.com;
-Felipe Sebastiano Filho;99912929;felipe@gmail.com;
-Otacio Da Silva Junior;129839092;otacio@gmail.com;
+Carlos Damaceno Nunes;387.463.287-44;carlos@gmail.com;
+Pedro Antonio Batista;793.643.280-00;pedro@gmail.com;
+Felipe Sebastiano Filho;999.129.299-34;felipe@gmail.com;
+Otacio Da Silva Junior;129.839.092-57;otacio@gmail.com;
