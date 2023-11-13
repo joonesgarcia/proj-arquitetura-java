@@ -87,4 +87,10 @@ public class Vendedor {
 	public void setProdutos(List<Produto> produtos) {
 		this.produtos = produtos;
 	}
+	public Endereco getEndereco() {
+		return endereco;
+	}
+	public void setEndereco(Endereco endereco) {
+		this.endereco = endereco;
+	}
 }
