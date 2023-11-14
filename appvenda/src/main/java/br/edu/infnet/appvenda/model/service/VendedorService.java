@@ -3,6 +3,7 @@ package br.edu.infnet.appvenda.model.service;
 import java.util.Collection;
 
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.data.domain.Sort;
 import org.springframework.stereotype.Service;
 
 import br.edu.infnet.appvenda.clients.IEnderecoClient;
@@ -28,9 +29,12 @@ public class VendedorService {
 		vendedorRepository.deleteById(id);
 	}
 	public Collection<Vendedor> obterVendedores(){
-		return (Collection<Vendedor>) vendedorRepository.findAll();
+		return (Collection<Vendedor>) vendedorRepository.findAll(Sort.by(Sort.Direction.ASC, "nome"));
 	}
 	public long obterQtde() {
 		return vendedorRepository.count();
+	}
+	public Vendedor pesquisar(String cpf) {
+		return vendedorRepository.findByCpf(cpf);
 	}
 }
