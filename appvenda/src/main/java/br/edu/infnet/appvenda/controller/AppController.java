@@ -5,10 +5,10 @@ import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
 
+import br.edu.infnet.appvenda.model.service.InformacaoService;
 import br.edu.infnet.appvenda.model.service.PerfumeService;
 import br.edu.infnet.appvenda.model.service.ProdutoService;
 import br.edu.infnet.appvenda.model.service.RoupaService;
-import br.edu.infnet.appvenda.model.service.VendasService;
 import br.edu.infnet.appvenda.model.service.VendedorService;
 
 @Controller
@@ -23,12 +23,12 @@ public class AppController {
 	@Autowired
 	private RoupaService roupaService;
 	@Autowired
-	private VendasService vendasService;
-
+	private InformacaoService informacaoService;
+	
 	@GetMapping(value = "/")
 	public String showHome(Model model) {
 		
-		model.addAttribute("informacoes", vendasService.obterInformacao());
+		model.addAttribute("informacoes", informacaoService.obterLista());
 		model.addAttribute("qtdeVendedor", vendedorService.obterQtde());
 		model.addAttribute("qtdeProduto", produtoService.obterQtde());
 		model.addAttribute("qtdePerfume", perfumeService.obterQtde());
